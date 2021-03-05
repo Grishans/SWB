@@ -6,6 +6,8 @@ const bgCondition = document.querySelector("#Paralax__img_condition");
 const bgConditionBottom = document.querySelector(
   "#Paralax__img_condition_bottom"
 );
+const bgConditionBAbout = document.querySelector("#Paralax__img_about");
+const bgFeedback = document.querySelector("#Paralax__img__feedback");
 
 //При движении мышью вызываем функцию, которая меняет положение фона
 document.addEventListener("mousemove", function (e) {
@@ -25,6 +27,8 @@ function MoveBackground(e) {
   bgMove.setAttribute("style", "left: " + offsetX + "px");
   bgCondition.setAttribute("style", "left: " + offsetX + "px");
   bgConditionBottom.setAttribute("style", "left: " + offsetX + "px");
+  bgConditionBAbout.setAttribute("style", "left: " + offsetX + "px");
+  bgFeedback.setAttribute("style", "left: " + offsetX + "px");
 }
 /*/Paralax*/
 
@@ -54,4 +58,51 @@ function borderRadiusSlider() {
 
 document.addEventListener("DOMContentLoaded", () => {
   borderRadiusSlider();
+});
+
+/*Select*/
+
+let select = document.querySelector("#select");
+let options = document.querySelectorAll("#optins > li");
+let optionsWrap = document.querySelector(".ulSeectWrap");
+let trigr = false;
+
+select.addEventListener("click", function (e) {
+  if (trigr) {
+    optionsWrap.style.opacity = "0";
+    trigr = !trigr;
+  } else {
+    optionsWrap.style.opacity = "1";
+    trigr = !trigr;
+  }
+
+  e.preventDefault();
+});
+
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", function () {
+    select.innerHTML = options[i].innerHTML;
+    optionsWrap.style.opacity = "0";
+    trigr = !trigr;
+  });
+}
+
+/*.Select*/
+
+function scrollUp() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+function scrollToForm() {
+  let feedback = document.querySelector(".feedback");
+  feedback.scrollIntoView({ behavior: "smooth" });
+}
+
+document.querySelector(".mt__button").addEventListener("click", function () {
+  scrollToForm();
+});
+document.querySelector(".scrollUP").addEventListener("click", function () {
+  scrollUp();
 });
