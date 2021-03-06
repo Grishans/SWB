@@ -38,20 +38,30 @@ function borderRadiusSlider() {
   );
 
   for (let i = 0; i < slirePartnersFirst.length; i++) {
-    if (i === 0) {
-      slirePartnersFirst[i].style.borderBottomRightRadius = "40px";
-    } else if (i === 1) {
-      slirePartnersFirst[i].style.borderTopRightRadius = "40px";
-    } else if (i === slirePartnersFirst.length - 1) {
-      slirePartnersFirst[i].style.borderTopLeftRadius = "40px";
-    } else if (i === slirePartnersFirst.length - 2) {
-      slirePartnersFirst[i].style.borderBottomLeftRadius = "40px";
-    } else if (i % 2) {
-      slirePartnersFirst[i].style.borderTopLeftRadius = "40px";
-      slirePartnersFirst[i].style.borderTopRightRadius = "40px";
+    if ($(window).width() < 900) {
+      if (i % 2) {
+        slirePartnersFirst[i].style.borderBottomRightRadius = "40px";
+        slirePartnersFirst[i].style.borderBottomLeftRadius = "40px";
+      } else {
+        slirePartnersFirst[i].style.borderTopRightRadius = "40px";
+        slirePartnersFirst[i].style.borderTopLeftRadius = "40px";
+      }
     } else {
-      slirePartnersFirst[i].style.borderBottomLeftRadius = "40px";
-      slirePartnersFirst[i].style.borderBottomRightRadius = "40px";
+      if (i === 0) {
+        slirePartnersFirst[i].style.borderBottomRightRadius = "40px";
+      } else if (i === 1) {
+        slirePartnersFirst[i].style.borderTopRightRadius = "40px";
+      } else if (i === slirePartnersFirst.length - 1) {
+        slirePartnersFirst[i].style.borderTopLeftRadius = "40px";
+      } else if (i === slirePartnersFirst.length - 2) {
+        slirePartnersFirst[i].style.borderBottomLeftRadius = "40px";
+      } else if (i % 2) {
+        slirePartnersFirst[i].style.borderTopLeftRadius = "40px";
+        slirePartnersFirst[i].style.borderTopRightRadius = "40px";
+      } else {
+        slirePartnersFirst[i].style.borderBottomLeftRadius = "40px";
+        slirePartnersFirst[i].style.borderBottomRightRadius = "40px";
+      }
     }
   }
 }
@@ -105,4 +115,11 @@ document.querySelector(".mt__button").addEventListener("click", function () {
 });
 document.querySelector(".scrollUP").addEventListener("click", function () {
   scrollUp();
+});
+let nav = document.querySelector(".mobilNav");
+document.querySelector(".navImg").addEventListener("click", function () {
+  nav.style.top = 0;
+});
+document.querySelector(".navCross").addEventListener("click", function () {
+  nav.style.top = "-100vh";
 });

@@ -34,6 +34,10 @@
         <img src="img/swb_uncolor.svg" alt="" />
         <img src="img/swb_uncolor.svg" alt="" />
       </div>
+      <div class="header_mobil">
+        <img src="img/swb.svg" alt="" />
+        <img src="img/navImg.svg" alt="" class="navImg" />
+      </div>
       <div class="main">
         <div class="main__text">
           <div class="mt__title">
@@ -56,11 +60,23 @@
         </div>
       </div>
       <img src="img/main_bg.png" class="mainBG" alt="" />
+      <div class="mobilBottomLine"></div>
+      <div class="mobilNav">
+        <ul>
+          <li><p>условия</p></li>
+          <li><p>о партнерах</p></li>
+          <li><p>о проекте</p></li>
+          <li><p>победители</p></li>
+          <li><p class="navWhite">связаться с нами</p></li>
+          <img src="img/mobilCross.svg" alt="" class="navCross" />
+        </ul>
+      </div>
     </section>
 
     <section class="condition">
       <div class="parallax background-tree" id="Paralax__img_condition">
         <img src="img/condition_title.png" alt="" />
+        <img src="img/condition_title_light.png" alt="" class="paraxImgMobil" />
         <img src="img/condition_title.png" alt="" />
         <img src="img/condition_title.png" alt="" />
         <img src="img/condition_title_light.png" alt="" />
@@ -88,6 +104,13 @@
           <img src="img/condition_img2.png" alt="" />
           <img src="img/condition_img3.png" alt="" />
         </div>
+        <div class="cw__content__img__mobil">
+          <div class="slider condition_mobil">
+            <div><img src="img/conditionSlide1.png" alt="" /></div>
+            <div><img src="img/conditionSlide2.png" alt="" /></div>
+            <div><img src="img/conditionSlide3.png" alt="" /></div>
+          </div>
+        </div>
         <div class="cw__rule">
           <a href="#"
             ><span>ознакомьтесь</span>
@@ -100,7 +123,7 @@
             <div class="cww__block">
               <p>бизнесмены</p>
               <span
-                >должны заниматься спортом, т.к. это наилучший подход к ведению
+                >Должны заниматься спортом, т.к. это наилучший подход к ведению
                 любого дела. Занимаясь спортом во множество раз легче
                 преодолевать трудности в бизнес-индустрии.</span
               >
@@ -108,7 +131,7 @@
             <div class="cww__block cww__blockBlue">
               <p>спрорсмены</p>
               <span
-                >должны заниматься спортом, т.к. это наилучший подход к ведению
+                >Должны заниматься спортом, т.к. это наилучший подход к ведению
                 любого дела. Занимаясь спортом во множество раз легче
                 преодолевать трудности в бизнес-индустрии.</span
               >
@@ -122,6 +145,7 @@
         id="Paralax__img_condition_bottom"
       >
         <img src="img/partners.png" alt="" />
+        <img src="img/partners__light.png" alt="" class="paraxImgMobil" />
         <img src="img/partners.png" alt="" />
         <img src="img/partners__light.png" alt="" />
         <img src="img/partners.png" alt="" />
@@ -155,6 +179,7 @@
     <section class="about">
       <div class="parallax background-tree" id="Paralax__img_about">
         <img src="img/abouts.png" alt="" />
+        <img src="img/aboutLight.png" alt="" class="paraxImgMobil" />
         <img src="img/abouts.png" alt="" />
         <img src="img/aboutLight.png" alt="" />
         <img src="img/abouts.png" alt="" />
@@ -306,6 +331,7 @@
     <section class="feedback">
       <div class="parallax background-tree" id="Paralax__img__feedback">
         <img src="img/swb_uncolor.svg" alt="" />
+        <img src="img/swb.svg" alt="" class="paraxImgMobil" />
         <img src="img/swb_uncolor.svg" alt="" />
         <img src="img/swb.svg" alt="" />
         <img src="img/swb_uncolor.svg" alt="" />
@@ -360,6 +386,12 @@
           </div>
         </form>
       </div>
+      <div class="copyWrite">
+        <p>
+          © 2021 <a href="https://itd.company/" target="_blank">ITD Company</a>.
+          All rights reserved
+        </p>
+      </div>
     </section>
 
     <div class="scrollUP">
@@ -393,7 +425,7 @@
               slidesToShow: 1,
               slidesToScroll: 1,
               infinite: false,
-              dots: true,
+              dots: false,
               draggable: true,
             },
           },
@@ -419,11 +451,14 @@
             breakpoint: 920,
             settings: {
               arrow: false,
-              slidesToShow: 1,
+              slidesToShow: 1.5,
               slidesToScroll: 1,
               infinite: false,
-              dots: true,
+              dots: false,
               draggable: true,
+              swipe: true,
+              arrow: false,
+              infinite: true,
             },
           },
         ],
@@ -448,14 +483,28 @@
             breakpoint: 920,
             settings: {
               arrow: false,
-              slidesToShow: 1,
+              slidesToShow: 1.4,
               slidesToScroll: 1,
               infinite: false,
-              dots: true,
+              dots: false,
+              arrow: false,
               draggable: true,
+              swipe: true,
             },
           },
         ],
+      });
+    </script>
+    <script>
+      $(".condition_mobil").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrow: false,
+        dots: true,
+        draggable: false,
+        rows: 1,
+        swipe: true,
       });
     </script>
     <script src="js/script.js"></script>
